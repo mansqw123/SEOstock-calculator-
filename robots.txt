@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://mansqw123.github.io/SEOstock-calculator-/sitemap.xml
