@@ -1,65 +1,83 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>स्टॉक स्प्लिट कैलकुलेटर - अपने निवेश का मूल्य जानें</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Calculator - Best Calculator for Stocks</title>
+  <meta name="description" content="Calculate your stock profits easily with our fast and simple stock calculator.">
+  <meta name="keywords" content="Stock Calculator, Profit Calculator, Stock Profit, Investment Calculator">
+  <meta name="author" content="SEOstock-calculator">
+  <link rel="canonical" href="https://mansqw123.github.io/SEOstock-calculator-/">
+  <meta property="og:title" content="Stock Calculator - Best Calculator for Stocks">
+  <meta property="og:description" content="Calculate your stock profits easily with our fast and simple stock calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mansqw123.github.io/SEOstock-calculator-/">
+  <meta property="og:image" content="https://mansqw123.github.io/SEOstock-calculator-/stock-calculator.jpg">
 
-  <!-- ✅ Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFK7D0RYQF"></script>
+  <!-- Google Analytics Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BE3SZ1LMJ9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-NFK7D0RYQF');
+    gtag('config', 'G-BE3SZ1LMJ9');
   </script>
 
-  <!-- ✅ Google Site Verification -->
-  <meta name="google-site-verification" content="2BB-3YkLR5qEii7iw-HcWgdHTt5aKK1wxY5PnGQITeI" />
-
-  <!-- ✅ SEO Meta Tags -->
-  <meta name="description" content="स्टॉक स्प्लिट के बाद अपने शेयरों की नई संख्या और मूल्य की गणना करें। सटीक और तुरंत परिणाम पाएं।" />
-  <meta name="keywords" content="स्टॉक स्प्लिट कैलकुलेटर, शेयर कैलकुलेटर, स्टॉक कैलकुलेटर हिंदी, निवेश गणना, शेयर स्प्लिट कैलकुलेटर, शेयर स्प्लिट टूल, Stock Split Calculator Hindi, Stock Split Tool India" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="mansqw123" />
-
-  <!-- ✅ Open Graph (Facebook etc.) -->
-  <meta property="og:title" content="स्टॉक स्प्लिट कैलकुलेटर - अपने निवेश का मूल्य जानें" />
-  <meta property="og:description" content="स्टॉक स्प्लिट के बाद अपने शेयरों की नई संख्या और मूल्य की गणना करें। तुरंत और सटीक परिणाम पाएं!" />
-  <meta property="og:url" content="https://mansqw123.github.io/SEOstock-calculator-/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://mansqw123.github.io/SEOstock-calculator-/preview.png" />
-
-  <!-- ✅ Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="स्टॉक स्प्लिट कैलकुलेटर - अपने निवेश का मूल्य जानें" />
-  <meta name="twitter:description" content="स्टॉक स्प्लिट के बाद अपने निवेश की पूरी जानकारी पाएं। हिंदी में शेयर कैलकुलेटर।" />
-  <meta name="twitter:image" content="https://mansqw123.github.io/SEOstock-calculator-/preview.png" />
-
-  <!-- ✅ Structured Data (JSON-LD Schema.org) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "स्टॉक स्प्लिट कैलकुलेटर",
-    "url": "https://mansqw123.github.io/SEOstock-calculator-/",
-    "author": {
-      "@type": "Person",
-      "name": "mansqw123"
-    },
-    "description": "स्टॉक स्प्लिट के बाद अपने शेयरों की नई संख्या और मूल्य की गणना करें। हिंदी में निवेश कैलकुलेटर।",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "All",
-    "inLanguage": "hi"
-  }
-  </script>
-
-  <!-- ✅ Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 40px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+    }
+    input, button {
+      margin: 10px;
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+    }
+  </style>
 </head>
+
 <body>
-  <!-- ✅ बाकी तुम्हारा बॉडी कंटेंट जैसा है वैसे ही रहेगा -->
-  <!-- ... -->
-  <script src="script.js"></script>
+  <h1>Stock Calculator</h1>
+  <input type="number" id="buyPrice" placeholder="Buy Price per Share">
+  <br>
+  <input type="number" id="sellPrice" placeholder="Sell Price per Share">
+  <br>
+  <input type="number" id="quantity" placeholder="Quantity">
+  <br>
+  <button onclick="calculate()">Calculate Profit/Loss</button>
+  <div class="result" id="result"></div>
+
+  <script>
+    function calculate() {
+      var buyPrice = parseFloat(document.getElementById('buyPrice').value);
+      var sellPrice = parseFloat(document.getElementById('sellPrice').value);
+      var quantity = parseInt(document.getElementById('quantity').value);
+
+      if (isNaN(buyPrice) || isNaN(sellPrice) || isNaN(quantity)) {
+        document.getElementById('result').innerText = "Please fill all fields correctly.";
+        return;
+      }
+
+      var profitLoss = (sellPrice - buyPrice) * quantity;
+      if (profitLoss > 0) {
+        document.getElementById('result').innerText = "Profit: ₹" + profitLoss.toFixed(2);
+      } else if (profitLoss < 0) {
+        document.getElementById('result').innerText = "Loss: ₹" + Math.abs(profitLoss).toFixed(2);
+      } else {
+        document.getElementById('result').innerText = "No Profit No Loss.";
+      }
+    }
+  </script>
 </body>
 </html>
